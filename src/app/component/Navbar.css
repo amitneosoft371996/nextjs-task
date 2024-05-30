@@ -1,0 +1,12 @@
+.navbar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: #7fb401;
+    z-index: 999;
+}
+.navlink a{
+    color: #fff;
+    font-weight: 700;
+    font-size: 18px;
+}

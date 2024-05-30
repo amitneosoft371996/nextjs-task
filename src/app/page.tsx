@@ -1,113 +1,247 @@
 import Image from "next/image";
-
+import { faCartShopping, faCoffee, faEye, faHeart, faSortDesc, faStar } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import './page.css';
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+      <div className="carousel w-full">
+        <div id="slide1" className="carousel-item relative w-full">
+          <div className="hero min-h-screen" style={{ backgroundImage: 'url(/images/slide-1.jpg)' }}>
+            <div className="hero-overlay bg-opacity-60"></div>
+            <div className="hero-content text-center text-neutral-content">
+              <div className="max-w-md">
+                <h1 className="mb-5 text-5xl font-bold">Hello there</h1><p></p>
+                <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                <button className="btn btn-primary">Get Started</button>
+              </div>
+            </div>
+          </div>
+          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide4" className="btn btn-circle">❮</a>
+            <a href="#slide2" className="btn btn-circle">❯</a>
+          </div>
+        </div>
+        <div id="slide2" className="carousel-item relative w-full">
+          <div className="hero min-h-screen" style={{ backgroundImage: 'url(/images/slide-3.jpg)' }}>
+            <div className="hero-overlay bg-opacity-60"></div>
+            <div className="hero-content text-center text-neutral-content">
+              <div className="max-w-md">
+                <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
+                <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                <button className="btn btn-primary">Get Started</button>
+              </div>
+            </div>
+          </div>
+          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide1" className="btn btn-circle">❮</a>
+            <a href="#slide3" className="btn btn-circle">❯</a>
+          </div>
+        </div>
+        <div id="slide3" className="carousel-item relative w-full">
+          <div className="hero min-h-screen" style={{ backgroundImage: 'url(/images/slide-2.jpg)' }}>
+            <div className="hero-overlay bg-opacity-60"></div>
+            <div className="hero-content text-center text-neutral-content">
+              <div className="max-w-md">
+                <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
+                <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                <button className="btn btn-primary">Get Started</button>
+              </div>
+            </div>
+          </div>
+          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide2" className="btn btn-circle">❮</a>
+            <a href="#slide4" className="btn btn-circle">❯</a>
+          </div>
+        </div>
+        <div id="slide4" className="carousel-item relative w-full">
+          <div className="hero min-h-screen" style={{ backgroundImage: 'url(/images/slide-3.jpg)' }}>
+            <div className="hero-overlay bg-opacity-60"></div>
+            <div className="hero-content text-center text-neutral-content">
+              <div className="max-w-md">
+                <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
+                <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                <button className="btn btn-primary">Get Started</button>
+              </div>
+            </div>
+          </div>
+          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide3" className="btn btn-circle">❮</a>
+            <a href="#slide1" className="btn btn-circle">❯</a>
+          </div>
         </div>
       </div>
+      <section className="moreproduct mt-12 mb-12">
+        <div className="container">
+          <div className="grid grid-cols-2 gap-4 ">
+            <div className="product-item shadow-lg shadow-cyan-500/50">
+              <div className="item wow fadeInLef animated visibility: visible" style={{ backgroundImage: 'url(/images/1.jpg)' }}>
+                <div className="offer-sec">
+                  <div className="inner-title">For All Cosmetics<div className="offer"><span>30% <br />OFF</span></div></div>
+                </div>
+                <div className="content">
+                  <h3>We Grow Beauty</h3>
+                  <p>It is a long established fact that a reader will be <br /> distracted by the readable content of a page when <br /> looking organic cosmetics.</p>
+                  <div className="link-btn"><a href="#" className="tran3s">More Products<span className="fa fa-sort-desc"></span></a></div>
+                </div>
+              </div>
+            </div>
+            <div className="product-item">
+              <div className="item wow fadeInLef animated visibility: visible" style={{ backgroundImage: 'url(/images/2.jpg)' }}>
+                <div className="offer-sec">
+                  <div className="inner-title">For All Cosmetics<div className="offer"><span>30% <br />OFF</span></div></div>
+                </div>
+                <div className="content">
+                  <h3>We Grow Beauty</h3>
+                  <p>It is a long established fact that a reader will be <br /> distracted by the readable content of a page when <br /> looking organic cosmetics.</p>
+                  <div className="link-btn"><a href="#" className="tran3s">More Products<span className="fa fa-sort-desc"></span></a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="moreproduct mt-12 mb-12">
+        <div className="container">
+          <div className="grid grid-cols-4 gap-4 featured-product ">
+            <div className="inner-box ">
+              <div className="single-item center">
+                <figure className="image-box"><Image src='/images/proimg1.png' width={100} height={80} alt=''></Image><div className="product-model new">New</div></figure>
+                <div className="content">
+                  <h3><a href="shop-single.html">Turmeric Powder</a></h3>
+                  <div className="ratingicon"><span><FontAwesomeIcon icon={faStar} /></span><span><FontAwesomeIcon icon={faStar} /></span><span><FontAwesomeIcon icon={faStar} /></span><span><FontAwesomeIcon icon={faStar} /></span><span><FontAwesomeIcon icon={faStar} /></span></div>
+                  <div className="price">$12.99 <span className="prev-rate">$14.99</span></div>
+                </div>
+                <div className="overlay-box">
+                  <div className="inner">
+                    <div className="top-content">
+                      <ul>
+                        <li><a href="#"><span className="fa fa-eye"><FontAwesomeIcon icon={faEye} /></span></a></li>
+                        <li className="tultip-op"><span className="tultip"><i className="fa fa-sort-desc"></i>ADD TO CART</span><a href="#"><span className="icon-icon-32846"><FontAwesomeIcon icon={faCartShopping} /></span></a>
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+                        </li>
+                        <li><a href="#"><span className="fa fa-heart-o"><FontAwesomeIcon icon={faHeart} /></span></a></li>
+                      </ul>
+                    </div>
+                    <div className="bottom-content">
+                      <h4><a href="#">It Contains:</a></h4>
+                      <p>35% of organic raisins 55% of oats and 10% of butter. </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="inner-box ">
+              <div className="single-item center">
+                <figure className="image-box"><Image src='/images/proimg2.png' width={100} height={80} alt=''></Image></figure>
+                <div className="content">
+                  <h3><a href="shop-single.html">Turmeric Powder</a></h3>
+                  <div className="ratingicon"><span><FontAwesomeIcon icon={faStar} /></span><span><FontAwesomeIcon icon={faStar} /></span><span><FontAwesomeIcon icon={faStar} /></span><span><FontAwesomeIcon icon={faStar} /></span><span><FontAwesomeIcon icon={faStar} /></span></div>
+                  <div className="price">$12.99 <span className="prev-rate">$14.99</span></div>
+                </div>
+                <div className="overlay-box">
+                  <div className="inner">
+                    <div className="top-content">
+                      <ul>
+                        <li><a href="#"><span className="fa fa-eye"><FontAwesomeIcon icon={faEye} /></span></a></li>
+                        <li className="tultip-op"><span className="tultip"><i className="fa fa-sort-desc"></i>ADD TO CART</span><a href="#"><span className="icon-icon-32846"><FontAwesomeIcon icon={faCartShopping} /></span></a>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+                        </li>
+                        <li><a href="#"><span className="fa fa-heart-o"><FontAwesomeIcon icon={faHeart} /></span></a></li>
+                      </ul>
+                    </div>
+                    <div className="bottom-content">
+                      <h4><a href="#">It Contains:</a></h4>
+                      <p>35% of organic raisins 55% of oats and 10% of butter. </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="inner-box ">
+              <div className="single-item center">
+                <figure className="image-box"><Image src='/images/proimg3.png' width={100} height={80} alt=''></Image><div className="product-model  hot">Hot</div></figure>
+                <div className="content">
+                  <h3><a href="shop-single.html">Turmeric Powder</a></h3>
+                  <div className="ratingicon"><span><FontAwesomeIcon icon={faStar} /></span><span><FontAwesomeIcon icon={faStar} /></span><span><FontAwesomeIcon icon={faStar} /></span><span><FontAwesomeIcon icon={faStar} /></span><span><FontAwesomeIcon icon={faStar} /></span></div>
+                  <div className="price">$12.99 <span className="prev-rate">$14.99</span></div>
+                </div>
+                <div className="overlay-box">
+                  <div className="inner">
+                    <div className="top-content">
+                      <ul>
+                        <li><a href="#"><span className="fa fa-eye"><FontAwesomeIcon icon={faEye} /></span></a></li>
+                        <li className="tultip-op"><span className="tultip"><i className="fa fa-sort-desc"></i>ADD TO CART</span><a href="#"><span className="icon-icon-32846"><FontAwesomeIcon icon={faCartShopping} /></span></a>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+                        </li>
+                        <li><a href="#"><span className="fa fa-heart-o"><FontAwesomeIcon icon={faHeart} /></span></a></li>
+                      </ul>
+                    </div>
+                    <div className="bottom-content">
+                      <h4><a href="#">It Contains:</a></h4>
+                      <p>35% of organic raisins 55% of oats and 10% of butter. </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="inner-box ">
+              <div className="single-item center">
+                <figure className="image-box"><Image src='/images/proimg4.png' width={100} height={80} alt=''></Image><div className="product-model new">New</div></figure>
+                <div className="content">
+                  <h3><a href="shop-single.html">Turmeric Powder</a></h3>
+                  <div className="ratingicon"><span><FontAwesomeIcon icon={faStar} /></span><span><FontAwesomeIcon icon={faStar} /></span><span><FontAwesomeIcon icon={faStar} /></span><span><FontAwesomeIcon icon={faStar} /></span><span><FontAwesomeIcon icon={faStar} /></span></div>
+                  <div className="price">$12.99 <span className="prev-rate">$14.99</span></div>
+                </div>
+                <div className="overlay-box">
+                  <div className="inner">
+                    <div className="top-content">
+                      <ul>
+                        <li><a href="#"><span className="fa fa-eye"><FontAwesomeIcon icon={faEye} /></span></a></li>
+                        <li className="tultip-op"><span className="tultip"><i className="fa fa-sort-desc"></i>ADD TO CART</span><a href="#"><span className="icon-icon-32846"><FontAwesomeIcon icon={faCartShopping} /></span></a>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+                        </li>
+                        <li><a href="#"><span className="fa fa-heart-o"><FontAwesomeIcon icon={faHeart} /></span></a></li>
+                      </ul>
+                    </div>
+                    <div className="bottom-content">
+                      <h4><a href="#">It Contains:</a></h4>
+                      <p>35% of organic raisins 55% of oats and 10% of butter. </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="inner-box ">
+              <div className="single-item center">
+                <figure className="image-box"><Image src='/images/proimg5.png' width={100} height={80} alt=''></Image></figure>
+                <div className="content">
+                  <h3><a href="shop-single.html">Turmeric Powder</a></h3>
+                  <div className="ratingicon"><span><FontAwesomeIcon icon={faStar} /></span><span><FontAwesomeIcon icon={faStar} /></span><span><FontAwesomeIcon icon={faStar} /></span><span><FontAwesomeIcon icon={faStar} /></span><span><FontAwesomeIcon icon={faStar} /></span></div>
+                  <div className="price">$12.99 <span className="prev-rate">$14.99</span></div>
+                </div>
+                <div className="overlay-box">
+                  <div className="inner">
+                    <div className="top-content">
+                      <ul>
+                        <li><a href="#"><span className="fa fa-eye"><FontAwesomeIcon icon={faEye} /></span></a></li>
+                        <li className="tultip-op"><span className="tultip">ADD TO CART</span><a href="#"><span className="icon-icon-32846"><FontAwesomeIcon icon={faCartShopping} /></span></a>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+                        </li>
+                        <li><a href="#"><span className="fa fa-heart-o"><FontAwesomeIcon icon={faHeart} /></span></a></li>
+                      </ul>
+                    </div>
+                    <div className="bottom-content">
+                      <h4><a href="#">It Contains:</a></h4>
+                      <p>35% of organic raisins 55% of oats and 10% of butter. </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
