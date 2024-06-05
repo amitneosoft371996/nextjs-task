@@ -8,21 +8,108 @@
       "contactNumber": "9675382019",
       "password": "12345678",
       "file": {}
+    },
+    {
+      "id": "e6f1",
+      "name": "amit",
+      "username": "aaaa",
+      "email": "amit.kunwarpal@gmail.com",
+      "contactNumber": "9675382019",
+      "password": "12345678",
+      "file": {}
     }
   ],
-  "comments": [
+  "allproduct": [
     {
       "id": "1",
-      "text": "a comment about post 1",
-      "postId": "1"
+      "description": "Lorem Ipsem",
+      "fixprice": "$14.99",
+      "offerprice": "$12.99",
+      "image": "/images/proimg1.png",
+      "itemcontains": "35% of organic raisins 55% of oats and 10% of butter."
     },
     {
       "id": "2",
-      "text": "another comment about post 1",
-      "postId": "1"
+      "description": "Lorem Ipsem",
+      "fixprice": "$16.99",
+      "offerprice": "$13.99",
+      "image": "/images/proimg2.png",
+      "itemcontains": "35% of organic raisins 55% of oats and 10% of butter."
+    },
+    {
+      "id": "3",
+      "description": "Lorem Ipsem",
+      "fixprice": "$11.99",
+      "offerprice": "$9.99",
+      "image": "/images/proimg3.png",
+      "itemcontains": "35% of organic raisins 55% of oats and 10% of butter."
+    },
+    {
+      "id": "4",
+      "description": "Lorem Ipsem",
+      "fixprice": "$24.99",
+      "offerprice": "$18.99",
+      "image": "/images/proimg4.png",
+      "itemcontains": "35% of organic raisins 55% of oats and 10% of butter."
+    },
+    {
+      "id": "5",
+      "description": "Lorem Ipsem",
+      "fixprice": "$21.99",
+      "offerprice": "$16.99",
+      "image": "/images/proimg5.png",
+      "itemcontains": "35% of organic raisins 55% of oats and 10% of butter."
+    },
+    {
+      "id": "6",
+      "description": "Lorem Ipsem",
+      "fixprice": "$22.99",
+      "offerprice": "$15.99",
+      "image": "/images/proimg6.png",
+      "itemcontains": "35% of organic raisins 55% of oats and 10% of butter."
     }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "cart": [
+    {
+      "id": "4",
+      "description": "Lorem Ipsem",
+      "fixprice": "$24.99",
+      "offerprice": "$18.99",
+      "image": "/images/proimg4.png",
+      "itemcontains": "35% of organic raisins 55% of oats and 10% of butter."
+    },
+    {
+      "id": "2",
+      "description": "Lorem Ipsem",
+      "fixprice": "$16.99",
+      "offerprice": "$13.99",
+      "image": "/images/proimg2.png",
+      "itemcontains": "35% of organic raisins 55% of oats and 10% of butter."
+    },
+    {
+      "id": "3",
+      "description": "Lorem Ipsem",
+      "fixprice": "$11.99",
+      "offerprice": "$9.99",
+      "image": "/images/proimg3.png",
+      "itemcontains": "35% of organic raisins 55% of oats and 10% of butter."
+    },
+    {
+      "id": "3",
+      "description": "Lorem Ipsem",
+      "fixprice": "$11.99",
+      "offerprice": "$9.99",
+      "image": "/images/proimg3.png",
+      "itemcontains": "35% of organic raisins 55% of oats and 10% of butter."
+    },
+    {
+      "id": "3",
+      "description": "Lorem Ipsem",
+      "fixprice": "$11.99",
+      "offerprice": "$9.99",
+      "image": "/images/proimg3.png",
+      "itemcontains": "35% of organic raisins 55% of oats and 10% of butter."
+    }
+
+  ]
 }

@@ -5,7 +5,7 @@ import '../login/login.css';
 import { validateEmail, validateName, validatePassword, validateUsername, validateContactNumber, validFile } from '../component/Validate';
 // import { useDispatch } from 'react-redux';
 // import { register } from '../../../app/features/userSlice';
-// import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 interface Errors {
   name?: string;
   username?: string;
@@ -23,7 +23,7 @@ const Signup = () => {
     password: '',
   });
   // const dispatch = useDispatch();
-  // const router = useRouter();
+ const router = useRouter();
   const [errors, setErrors] = useState({});
 
   const handleChange = (e: { target: { name: any; value: any; type: any; files: any; }; }) => {
@@ -94,7 +94,7 @@ const Signup = () => {
           });
           alert('Signup successful');
           // dispatch(register(formData));
-          // router.push('/');
+           router.push('/login');
         }
       } catch (err: any) {
         alert('Error: ' + err.message);
