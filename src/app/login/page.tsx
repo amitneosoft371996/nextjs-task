@@ -1,4 +1,3 @@
-// Login.tsx
 'use client';
 import React, { useState } from 'react';
 import { validateUsername, validatepassword } from '../component/Validate';
@@ -7,7 +6,6 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { loginUser } from '../api/productApi';
-
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -56,7 +54,7 @@ const Login = () => {
       <section className='login_sec'>
         <div className='container'>
           <div className='grid grid-rows-1 grid-flow-col justify-center'>
-            <div className='col col-end-7'>
+            <div className='  col-end-7'>
               <div className='signup-bx'>
                 <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-1 lg:px-8">
                   <div className="sm:mx-auto sm:w-full sm:max-w-sm">
@@ -79,6 +77,7 @@ const Login = () => {
                             onChange={handleChange}
                             className="block form-control w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                           />
+                          {errors.username && <span className="text-red-500 text-sm">{errors.username}</span>}
                         </div>
                       </div>
                       <div>
@@ -95,6 +94,7 @@ const Login = () => {
                             onChange={handleChange}
                             className="block w-full form-control rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                           />
+                          {errors.password && <span className="text-red-500 text-sm">{errors.password}</span>}
                         </div>
                       </div>
                       <div className='btnbx'>

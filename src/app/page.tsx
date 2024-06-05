@@ -1,11 +1,10 @@
 "use client"
 import Image from "next/image";
-import { faCartShopping, faEye, faHeart, faStar } from '@fortawesome/free-solid-svg-icons'
+import {  faEye, faHeart, faStar } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './page.css';
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import ProductDetail from "./productsingle/page";
 import { useRouter } from "next/navigation";
 import { fetchAllProducts } from "./api/productApi";
 interface Product {
@@ -19,7 +18,6 @@ interface Product {
 }
 export default function Home() {
   const [products, setProducts] = useState<Product[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
  const router= useRouter();
  useEffect(() => {
@@ -29,16 +27,11 @@ export default function Home() {
           setProducts(data);
       } catch (error) {
           setError('Failed to fetch product details');
-      } finally {
-          setLoading(false);
       }
   };
 
   fetchProducts();
 }, []);
-  if (loading) {
-    return <div>Loading...</div>;
-  }
 
   if (error) {
     return <div>{error}</div>;
@@ -114,7 +107,7 @@ export default function Home() {
       </div>
       <section className="moreproduct mt-12 mb-12">
         <div className="container">
-          <div className="grid grid-cols-2 gap-4 ">
+          <div className="grid grid-cols-2 gap-4  ">
             <div className="product-item shadow-lg shadow-cyan-500/50">
               <div className="item wow fadeInLef animated visibility: visible" style={{ backgroundImage: 'url(/images/1.jpg)' }}>
                 <div className="offer-sec">
@@ -123,7 +116,7 @@ export default function Home() {
                 <div className="content">
                   <h3>We Grow Beauty</h3>
                   <p>It is a long established fact that a reader will be <br /> distracted by the readable content of a page when <br /> looking organic cosmetics.</p>
-                  <div className="link-btn"><a href="#" className="tran3s">More Products<span className="fa fa-sort-desc"></span></a></div>
+                  <div className="link-btn"><Link href="/moreproduct" className="tran3s">More Products<span className="fa fa-sort-desc"></span></Link></div>
                 </div>
               </div>
             </div>
@@ -135,7 +128,7 @@ export default function Home() {
                 <div className="content">
                   <h3>We Grow Beauty</h3>
                   <p>It is a long established fact that a reader will be <br /> distracted by the readable content of a page when <br /> looking organic cosmetics.</p>
-                  <div className="link-btn"><a href="#" className="tran3s">More Products<span className="fa fa-sort-desc"></span></a></div>
+                  <div className="link-btn"><Link href="/moreproduct" className="tran3s">More Products<span className="fa fa-sort-desc"></span></Link></div>
                 </div>
               </div>
             </div>
@@ -144,7 +137,7 @@ export default function Home() {
       </section>
       <section className="moreproduct mt-12 mb-12">
         <div className="container">
-          <div className="grid grid-cols-4 gap-4 featured-product ">
+          <div className="grid grid-cols-1 gap-4 lg:grid-cols-4 featured-product ">
             {products.map((item: any, index: any)=>(
                <div className="inner-box " key={index}>
                <div className="single-item center">
@@ -159,9 +152,9 @@ export default function Home() {
                      <div className="top-content">
                        <ul>
                          <li><Link href={{pathname:'/productsingle', query: {id:item?.id}}}><span className="fa fa-eye"><FontAwesomeIcon icon={faEye} /></span></Link></li>
-                         <li className="tultip-op"><span className="tultip"><i className="fa fa-sort-desc"></i>ADD TO CART</span><a href="#"><span className="icon-icon-32846"><FontAwesomeIcon icon={faCartShopping} /></span></a>
+                         {/* <li className="tultip-op"><span className="tultip"><i className="fa fa-sort-desc"></i>ADD TO CART</span><a href="#"><span className="icon-icon-32846"><FontAwesomeIcon icon={faCartShopping} /></span></a>
  
-                         </li>
+                         </li> */}
                          <li><a href="#"><span className="fa fa-heart-o"><FontAwesomeIcon icon={faHeart} /></span></a></li>
                        </ul>
                      </div>

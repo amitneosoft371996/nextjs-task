@@ -45,6 +45,15 @@ const ProductDetail = ({ searchParams }: Props) => {
             }
         };
         fetchAllData();
+        const fetchCartData = async () => {
+            try {
+                const cartData: Cart[] = await fetchCartItem();
+                setCartItems(cartData);
+            } catch (error) {
+                setError('Failed to fetch cart items');
+            }
+        };
+        fetchCartData()
     }, [])
     if (!product) {
         return <div>No product found</div>;
@@ -52,6 +61,13 @@ const ProductDetail = ({ searchParams }: Props) => {
 
     const handleAddCartItem = async () => {
         if (!product) return;
+        const cartData: Cart[] = await fetchCartItem();
+        setCartItems(cartData);
+        const isItemInCart = cartData.some(item => Number(item.id) === Number(product.id));
+        if (isItemInCart) {
+            alert('Item already in cart');
+            return;
+        }
         try {
             await addItemToCart(product);
             const updatedCartItems: Cart[] = await fetchCartItem();
@@ -59,8 +75,9 @@ const ProductDetail = ({ searchParams }: Props) => {
         } catch (error) {
             setError('Failed to add item to cart');
         }
-   console.log(cartItems);
     };
+   console.log(cartItems);
+  
 
     return (
         <div>
@@ -92,7 +109,7 @@ const ProductDetail = ({ searchParams }: Props) => {
                                 <button className="float_left tran3s">Check</button>
                                 <span className="float_left color1">*Expected Delivery in 4-10 Days</span>
                             </div>
-                            <input type="number" value="1" min="1" />
+                            <input type="number" id="number-input" aria-describedby="helper-text-explanation" className=" inputbx bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder='1' />
                             <button onClick={handleAddCartItem} className="tran3s color1_bg addcart">Add to Cart</button>
                         </div>
                     </div>
@@ -108,7 +125,7 @@ const ProductDetail = ({ searchParams }: Props) => {
 
             <section className="moreproduct mt-12 mb-12">
                 <div className="container">
-                    <div className="grid grid-cols-4 gap-4 featured-product ">
+                    <div className="grid grid-cols-1 lg:grid-cols-4 sm:grid-cols-2 gap-4 featured-product ">
                         {allproduct.map((item: any, index: any) => (
                             <div className="inner-box " key={index}>
                                 <div className="single-item center">
@@ -123,9 +140,9 @@ const ProductDetail = ({ searchParams }: Props) => {
                                             <div className="top-content">
                                                 <ul>
                                                     <li><Link href={{ pathname: '/productsingle', query: { id: item?.id } }}><span className="fa fa-eye"><FontAwesomeIcon icon={faEye} /></span></Link></li>
-                                                    <li className="tultip-op"><span className="tultip"><i className="fa fa-sort-desc"></i>ADD TO CART</span><a href="#"><span className="icon-icon-32846"><FontAwesomeIcon icon={faCartShopping} /></span></a>
+                                                    {/* <li className="tultip-op"><span className="tultip"><i className="fa fa-sort-desc"></i>ADD TO CART</span><button onClick={handleAddCartItem}><span className="icon-icon-32846"><FontAwesomeIcon icon={faCartShopping} /></span></button>
 
-                                                    </li>
+                                                    </li> */}
                                                     <li><a href="#"><span className="fa fa-heart-o"><FontAwesomeIcon icon={faHeart} /></span></a></li>
                                                 </ul>
                                             </div>
