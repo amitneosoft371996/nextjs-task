@@ -1,11 +1,11 @@
 "use client"
 import { useState } from 'react';
-// import { Col, Container, Form, FormGroup, Row, Button } from 'react-bootstrap';
 import '../login/login.css';
 import { validateEmail, validateName, validatePassword, validateUsername, validateContactNumber, validFile } from '../component/Validate';
-// import { useDispatch } from 'react-redux';
-// import { register } from '../../../app/features/userSlice';
-// import { useRouter } from 'next/router';
+import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
+
 interface Errors {
   name?: string;
   username?: string;
@@ -14,6 +14,7 @@ interface Errors {
   password?: string;
   file?: string;
 }
+
 const Signup = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -22,9 +23,9 @@ const Signup = () => {
     contactNumber: '',
     password: '',
   });
-  // const dispatch = useDispatch();
-  // const router = useRouter();
-  const [errors, setErrors] = useState({});
+
+  const router = useRouter();
+  const [errors, setErrors] = useState<Errors>({});
 
   const handleChange = (e: { target: { name: any; value: any; type: any; files: any; }; }) => {
     const { name, value, type, files } = e.target;
@@ -93,8 +94,7 @@ const Signup = () => {
             body: JSON.stringify(formData)
           });
           alert('Signup successful');
-          // dispatch(register(formData));
-          // router.push('/');
+          router.push('/login');
         }
       } catch (err: any) {
         alert('Error: ' + err.message);
@@ -109,41 +109,90 @@ const Signup = () => {
           <div className='grid grid-rows-1 grid-flow-col gap-4 justify-center'>
             <div className='col'>
               <div className='signup-bx'>
+                <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+                  <Image src='/images/logo.png' width={100} height={80} className="mx-auto h-10 w-auto" alt=''></Image>
+                  <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
+                    Create your account
+                  </h2>
+                </div>
                 <form className='form' onSubmit={handleSubmit}>
                   <div className="mb-3">
                     <label className="block text-sm font-medium leading-6 text-gray-900">Name</label>
-                    <input type="text" name="name" value={formData.name} onChange={handleChange} className="block form-control w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
-                    {/* {errors.name && <span className="text-danger">{errors.name}</span>} */}
+                    <input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      className="block form-control w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    />
+                    {errors.name && <span className="text-red-500 text-sm">{errors.name}</span>}
                   </div>
                   <div className="mb-3">
                     <label className="block text-sm font-medium leading-6 text-gray-900">User Name</label>
-                    <input type="text" name="username" placeholder="Enter User name" value={formData.username} onChange={handleChange} className="block form-control w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
-                    {/* {errors.username && <span className="text-danger">{errors.username}</span>} */}
+                    <input
+                      type="text"
+                      name="username"
+                      placeholder="Enter User name"
+                      value={formData.username}
+                      onChange={handleChange}
+                      className="block form-control w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    />
+                    {errors.username && <span className="text-red-500 text-sm">{errors.username}</span>}
                   </div>
                   <div className="mb-3">
                     <label className="block text-sm font-medium leading-6 text-gray-900">Email</label>
-                    <input type="email" name="email" placeholder="Enter email" value={formData.email} onChange={handleChange} className="block form-control w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
-                    {/* {errors.email && <span className="text-danger">{errors.email}</span>} */}
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Enter email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="block form-control w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    />
+                    {errors.email && <span className="text-red-500 text-sm">{errors.email}</span>}
                   </div>
                   <div className="mb-3">
                     <label className="block text-sm font-medium leading-6 text-gray-900">Contact Number</label>
-                    <input type="text" name="contactNumber" placeholder="Enter contact number" value={formData.contactNumber} onChange={handleChange} className="block form-control w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
-                    {/* {errors.contactNumber && <span className="text-danger">{errors.contactNumber}</span>} */}
+                    <input
+                      type="text"
+                      name="contactNumber"
+                      placeholder="Enter contact number"
+                      value={formData.contactNumber}
+                      onChange={handleChange}
+                      className="block form-control w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    />
+                    {errors.contactNumber && <span className="text-red-500 text-sm">{errors.contactNumber}</span>}
                   </div>
                   <div className="mb-4">
                     <label className="block text-sm font-medium leading-6 text-gray-900">Password</label>
-                    <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} className="block form-control w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
-                    {/* {errors.password && <span className="text-danger">{errors.password}</span>} */}
+                    <input
+                      type="password"
+                      name="password"
+                      placeholder="Password"
+                      value={formData.password}
+                      onChange={handleChange}
+                      className="block form-control w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    />
+                    {errors.password && <span className="text-red-500 text-sm">{errors.password}</span>}
                   </div>
                   <div className='mb-4'>
                     <label className="block text-sm font-medium leading-6 text-gray-900">Profile Picture</label>
-                    <input type='file' name='file' accept='.jpg, .jpeg' onChange={handleChange} className="block form-control w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
-                    {/* {errors.file && <span className="text-danger">{errors.file}</span>} */}
+                    <input
+                      type='file'
+                      name='file'
+                      accept='.jpg, .jpeg'
+                      onChange={handleChange}
+                      className="block form-control w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    />
+                    {errors.file && <span className="text-red-500 text-sm">{errors.file}</span>}
                   </div>
                   <div className='btnbx'>
                     <button className='submit-btn' type="submit">
                       Sign Up
                     </button>
+                  </div>
+                  <div className='ligiacc'>
+                    <p>You have account <Link href="/login">Login</Link></p>
                   </div>
                 </form>
               </div>

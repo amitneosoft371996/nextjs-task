@@ -1,0 +1,239 @@
+/*aboutstory*/
+
+
+.about-story {
+    position: relative;
+    padding: 120px 0;
+  }
+  .about-story .img-holder {
+  position: relative;
+  margin-top: 45px;
+  }
+  
+  
+  .about-story .about_quot {
+    position: relative;
+    font-style: italic;
+    font-size: 30px;
+    color: #333;
+    font-family: 'Playball', cursive;
+    margin:15px 0;
+  }
+  
+  .about-story .icon-box {
+    position: relative;
+    margin: 30px 0 30px;
+  
+  }
+  
+  .about-story .icon-box .single-item{
+    position: relative;
+    padding-left: 70px;
+    display: inline-block;
+    margin-right: 60px;
+  }
+  
+  .about-story .icon-box .single-item:last-child{
+    margin-right: 0px;
+  }
+  
+  
+  .about-story .icon-box .icon {
+    position: absolute;
+    color: #9c9c9c;
+    left: 0;
+    font-size: 45px;
+    top: 6px;
+  }
+  .about-story .icon-box .count {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 15px;
+  }
+  .about-story .icon-box .name {
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  
+  .about-story .link a {
+      font-size: 14px;
+      text-transform: uppercase;
+      color: #333;
+      width: 150px;
+      background: #f7f7f7;
+      line-height: 50px;
+      text-align: center;
+      margin-top: 25px;
+      font-weight: 700;
+      border-radius: 0px;
+      text-decoration: none;
+      display: block;
+  }
+ 
+  .theme_title {
+    position: relative;
+    padding-bottom: 26px;
+    margin-top: -6px;
+    text-transform: uppercase;
+}
+.theme_title:after {
+    position: absolute;
+    content: "";
+    left: 0px;
+    top: 50px;
+    width: 100%;
+    height: 10px;
+    background: url(../../../public/images/sep.png) center left no-repeat;
+}
+.theme_title h3 {
+    font-weight: 700;
+    font-size: 30px;
+}
+.about-story .icon-box .name {
+    font-size: 20px;
+    font-weight: 700;
+    color: #7fb401;
+}
+p {
+    font-size: 14px;
+    color: #9c9c9c;
+    line-height: 26px;
+    font-weight: 400;
+}
+  /*----threed column-----------*/
+  
+  .three-column {
+    position: relative;
+    background: #7fb401;
+    margin-bottom: 50px;
+  }
+  
+  .three-column .single-item {
+    position: relative;
+    margin: 70px 45px;
+    border: 2px solid rgba(65, 42, 42, 0.06);
+    padding: 0 15px;
+  }
+  
+  .three-column .single-item h5 {
+    font-size: 20px;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline;
+    padding: 0 15px;
+    position: relative;
+    top: -12px;
+  }
+  
+  .three-column .single-item .icon {
+    font-size: 20px;
+    height: 50px;
+    line-height: 50px;
+    color: #fff;
+    font-size: 50px;
+    margin: 5px 0 20px;
+  }
+  .three-column .single-item p {
+    color: #fff;
+  }
+  
+  .three-column .single-item .link a {
+      position: relative;
+      color: #fff;
+      font-weight: 700;
+      font-size: 14px;
+      border-bottom: 1px solid #fff;
+      margin: 33px 0 30px;
+      text-transform: uppercase;
+  }
+  
+  
+  /*----four column-----------*/
+  
+  .four-column {
+    position: relative;
+    padding: 90px 0 90px;
+  }
+  
+  .four-column .theme_title {
+    position: relative;
+    margin-bottom: 40px;
+  }
+  
+  .four-column .single-item {
+    position: relative;
+    margin-bottom: 40px;
+  }
+  
+  .four-column .single-item h5 {
+    font-size: 20px;
+    color: #333;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 25px 0;
+  }
+  
+  .four-column .single-item .icon {
+    height: 160px;
+    width : 160px;
+    line-height: 160px;
+    margin: 5px 0 20px;
+    background: #f7f7f7;
+    border-radius: 50%;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  
+  .four-column .single-item .icon:before {
+      position:absolute;
+      content: "";
+      left:-10px;
+      right:-10px;
+      top:-10px;
+      bottom: -10px;
+      border: 1px solid #f7f7f7;
+      border-radius: 50%;
+      -webkit-transition: .5s ease-in;
+      transition: .5s ease-in;
+  }
+  
+  .four-column .single-item .icon i {
+    font-size: 60px;
+  }
+  .four-column .single-item .icon span {
+    font-size: 20px;
+    height: 45px;
+    width : 45px;
+    line-height: 45px;
+    font-weight: 700;
+    background: #fff;
+    border: 1px solid #f7f7f7;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  
+  .four-column .single-item p {
+    color: #9c9c9c;
+  }
+  
+  .four-column .link a {
+      font-size: 14px;
+      text-transform: uppercase;
+      color: #fff;
+      width: 170px;
+      line-height: 50px;
+      text-align: center;
+      font-weight: 700;
+      border-radius: 0px;
+  }
+  .four-column .link a:hover {
+      background: #121d2f;
+  }
