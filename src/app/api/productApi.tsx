@@ -33,7 +33,7 @@ export const loginUser = async (username: string, password: string): Promise<str
     return user.username;
 };
 export const fetchAllProducts = async (): Promise<Product[]> => {
-    const response = await fetch('http://localhost:8000/allproduct');
+    const response = await fetch('http://localhost:8000/moreproduct');
     if (!response.ok) {
         throw new Error('Failed to fetch products');
     }

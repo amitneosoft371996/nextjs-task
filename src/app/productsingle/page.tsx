@@ -7,6 +7,7 @@ import '@/app/page.css'
 import Image from "next/image";
 import { fetchAllProducts, fetchSingleProduct, Product, addItemToCart, fetchCartItem, Cart } from '../api/productApi';
 import Link from 'next/link';
+import { showToast } from '../component/Toast';
 
 type Props = {
     searchParams: { [key: string]: string | string[] | undefined },
@@ -65,13 +66,14 @@ const ProductDetail = ({ searchParams }: Props) => {
         setCartItems(cartData);
         const isItemInCart = cartData.some(item => Number(item.id) === Number(product.id));
         if (isItemInCart) {
-            alert('Item already in cart');
+           showToast("warning",<p>Item allready in cart,Add quantity from cart</p>);
             return;
         }
         try {
             await addItemToCart(product);
             const updatedCartItems: Cart[] = await fetchCartItem();
             setCartItems(updatedCartItems);
+            showToast("success",<p>item added in cart</p>);
         } catch (error) {
             setError('Failed to add item to cart');
         }

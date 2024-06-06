@@ -26,6 +26,23 @@
       "contactNumber": "9675382019",
       "password": "123333",
       "file": {}
+    },
+    {
+      "id": "d8b5",
+      "name": "sarika",
+      "username": "sarika",
+      "email": "sarika@neosoft.com",
+      "contactNumber": "9675382019",
+      "password": "123456"
+    },
+    {
+      "id": "37d9",
+      "name": "sarika",
+      "username": "sarikaa",
+      "email": "sarikaa@neosoft.com",
+      "contactNumber": "9675382019",
+      "password": "12345678",
+      "file": {}
     }
   ],
   "allproduct": [
@@ -85,6 +102,14 @@
       "fixprice": "$16.99",
       "offerprice": "$13.99",
       "image": "/images/proimg2.png",
+      "itemcontains": "35% of organic raisins 55% of oats and 10% of butter."
+    },
+    {
+      "id": "3",
+      "description": "Lorem Ipsem",
+      "fixprice": "$11.99",
+      "offerprice": "$9.99",
+      "image": "/images/proimg3.png",
       "itemcontains": "35% of organic raisins 55% of oats and 10% of butter."
     }
   ],
